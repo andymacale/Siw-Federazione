@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>
+        Federazione Sport - Registrazione
+    </title>
+    <link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+<header>
+    <h1 style="margin-left: 29%; margin-top: -0.2%;">REGISTRAZIONE</h1>
+</header>
+
+<article>
+
+
+    <section>
+        <form th:action="@{/register}" method="POST">
+            <p><sup>*</sup>: Campo obbligatorio</p>
+            <fieldset>
+            <h2>Utente</h2>
+                <p>
+                    <label>Nome<sup>*</sup></label><br>
+                    <input type="text" placeholder="Nome"  th:field="${utente.nome}"/>
+                    <!-- <span th:if="${#fields.hasErrors('utente.nome')}" th:error="*{utente.nome}"></span> -->
+                </p>
+                <p>
+                    <label>Cognome<sup>*</sup></label><br>
+                    <input type="text" placeholder="Cognome"  th:field="${utente.cognome}"/>
+                    <!--<span th:if="${#fields.hasErrors('utente.cognome')}" th:error="*{utente.cognome}"></span>-->
+                </p>
+                <p>
+                    <label>Data di nascita<sup>*</sup></label><br>
+                    <input type="date" placeholder="Data di nascita"  th:field="${utente.dataNascita}"/>
+                    <!--<span th:if="${#fields.hasErrors('utente.dataNascita')}" th:error="*{utente.dataNascita}"></span>-->
+                </p>
+
+            </fieldset>
+            <fieldset>
+                <h2>Credenziali</h2>
+                <p>
+                    <label>Email<sup>*</sup></label><br>
+                    <input type="text" placeholder="Email" th:field="${credenziali.username}"/>
+                    <!--<span th:if="${#fields.hasErrors('credenziali.username')}" th:error="*{credenziali.username}"></span>-->
+                </p>
+                <p>
+                    <label>Password<sup>*</sup></label><br>
+                    <input type="password" placeholder="Password"  th:field="${credenziali.password}"/>
+                    <!--<span th:if="${#fields.hasErrors('credenziali.password')}" th:error="*{credenziali.password}"></span>-->
+                </p>
+            </fieldset>
+            <p>
+                <button><a href="/formLogin">INDIETRO</a></button>
+                <button type="submit">REGISTRATI</button>
+            </p>
+            <div th:object="${utente}">
+                <ul th:if="${#fields.hasGlobalErrors()}">
+                    <p style="color: darkred"><b>Errori utente:</b></p>
+                    <li style="color: darkred" th:each="err : ${#fields.globalErrors()}" th:text="${err}">
+                        ...
+                    </li>
+                </ul>
+            </div>
+            <div th:object="${credenziali}">
+                <ul th:if="${#fields.hasGlobalErrors()}">
+                    <p style="color: darkred"><b>Errori credenziali:</b></p>
+                    <li style="color: darkred" th:each="err : ${#fields.globalErrors()}" th:text="${err}">
+                        ...
+                    </li>
+                </ul>
+            </div>
+        </form>
+
+    </section>
+
+    <footer>
+        <p class="footer">Creato da: Andrea Macale (matr. 560793)</p>
+    </footer>
+
+</article>
+</body>
+</html>

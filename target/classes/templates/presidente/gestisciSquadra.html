@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>
+        Federazione Sport - Presidente
+    </title>
+    <link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+<header>
+    <h1 style="margin-left: 34%; margin-top: -0.2%;">PRESIDENTE</h1>
+    <p style="margin-left: 18%">
+        <button>
+            <a href="/logout">LOGOUT</a>
+        </button>
+    </p>
+</header>
+
+<article>
+
+
+    <section>
+        <h2>Gestione del <span th:text="${squadra.nome}"></span></h2>
+        <div id="flex-azioni">
+            <div class="azioni">
+                <a style="color: white"  th:href="@{'/presidente/squadraId='+${squadra.id}+'/formNewGiocatore'}">
+                    <table class="azioni">
+                        <tr style="height: 100%">
+                            <td style="width: 10%">
+                                <img class="azioniGiocatore" src="/immagini/aggiungiGiocatore.png">
+                            </td>
+                            <td style="width: 90%">
+                                <p>Aggiungi giocatore</p>
+                            </td>
+                        </tr>
+                    </table>
+                </a>
+            </div>
+            <div class="azioni">
+                <a style="color: white" th:href="@{'/presidente/squadraId='+${squadra.id}+'/formEsoneraGiocatore'}">
+                    <table>
+                        <tr style="height: 100%">
+                            <td style="width: 10%">
+                                <img class="azioniGiocatore" src="/immagini/rimuoviGiocatore.png">
+                            </td>
+                            <td style="width: 90%">
+                                <p>Esonera giocatore</p>
+                            </td>
+                        </tr>
+                    </table>
+                </a>
+            </div>
+        </div>
+        <p style="margin-top: 7%">
+            <button>
+                <a href="/">
+                    INDIETRO
+                </a>
+            </button>
+        </p>
+    </section>
+
+    <footer>
+        <p class="footer">Creato da: Andrea Macale (matr. 560793)</p>
+    </footer>
+
+</article>
+</body>
+</html>

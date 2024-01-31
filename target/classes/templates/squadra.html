@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	<head>
+		<title>
+			Federazione Sport - Squadra
+		</title>
+		<link rel="stylesheet" href="/css/stile.css" />
+	</head>
+	
+	<body>
+        <header>
+			<h1 style="margin-left: 37%; margin-top: -0.2%;">SQUADRA</h1>
+			<p style="margin-left: 23%">
+				<button>
+					<a href="/logout">LOGOUT</a>
+				</button>
+			</p>
+		 </header>
+          
+        <article>
+          
+          
+         <section>
+			 <span th:if="${squadra}">
+				 <h2>Squadra:</h2>
+				 <p><b>Nome</b>: <span th:text="${squadra.nome}"> </span></p>
+				 <p><b>Anno di fondazione</b>: <span th:text="${squadra.annoFondazione}"></span></p>
+				 <p><b>Sede</b>: <span th:text="${squadra.sede}"></span></p>
+				 <h2>Presidente:</h2>
+				 <span th:if="${squadra.presidente}">
+					 <p><b>Nome</b>:  <span th:text="${squadra.presidente.utente.nome}"> </span></p>
+					 <p><b>Cognome</b>:  <span th:text="${squadra.presidente.utente.cognome}"> </span></p>
+					 <p><b>Data di nascita</b>:  <span th:text="${squadra.presidente.utente.dataNascita}"> </span></p>
+					 <p><b>Luogo di nascita</b>:  <span th:text="${squadra.presidente.luogoNascita}"> </span></p>
+				 </span>
+				 <span th:unless="${squadra.presidente}">
+					 <p>Nessuno</p>
+				 </span>
+				 <p>
+					 <button>
+						 <a th:href="'/'">
+							 INDIETRO
+						 </a>
+					 </button>
+					 <button>
+						 <a th:href="'/squadra/'+${squadra.id}+'/giocatori'">
+							 GIOCATORI
+						 </a>
+					 </button>
+				 </p>
+			 </span>
+			 <span th:unless="${squadra}">
+				 <p>La squadra non esiste!</p>
+				 <button>
+				 	<a th:href="'/'">INDIETRO</a>
+				  </button>
+			 </span>
+
+          </section>
+          
+          <footer>
+			  <p class="footer">Creato da: Andrea Macale (matr. 560793)</p>
+		  </footer>
+          
+      </article>
+	</body>		
+</html>

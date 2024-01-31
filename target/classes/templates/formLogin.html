@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>
+        Federazione Sport - Registrazione
+    </title>
+    <link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+<header>
+    <h1 style="margin-left: 41%; margin-top: -0.2%;">LOGIN</h1>
+</header>
+
+<article>
+
+
+    <section>
+        <form th:action="@{/login}" method="POST">
+
+            <p><sup>*</sup>: Campo obbligatorio</p>
+                <p>
+                    <label>Username<sup>*</sup></label><br>
+                    <input type="text" name="username" placeholder="Username"/>
+                </p>
+                <p>
+                    <label>Password<sup>*</sup></label><br>
+                    <input type="password" name="password" placeholder="Password"/>
+                </p>
+                <p style="color: red">
+                    <span th:if="${param.error != null}">Username o password non corretti!</span>
+                </p>
+            <p><button type="submit">LOGIN</button></p>
+        </form>
+        <p>
+            Non sei registrato:
+            <button type="submit"><a style="text-decoration: none; color: black" th:href="@{/register}">REGISTRATI</a></button>
+        </p>
+        <p><button><a href="/">INDIETRO</a></button></p>
+    </section>
+
+    <footer>
+        <p class="footer">Creato da: Andrea Macale (matr. 560793)</p>
+    </footer>
+
+</article>
+</body>
+</html>

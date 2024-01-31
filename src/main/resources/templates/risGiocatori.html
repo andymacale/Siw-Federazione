@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	<head>
+		<title>
+			Federazione Sport - Giocatori
+		</title>
+		<link rel="stylesheet" href="/css/stile.css" />
+	</head>
+	
+	<body>
+        <header>
+			<h1 style="margin-left: 35%; margin-top: -0.2%;">GIOCATORI</h1>
+			<p style="margin-left: 22%">
+				<button>
+					<a href="/logout">LOGOUT</a>
+				</button>
+			</p>
+		</header>
+          
+        <article>
+          
+          
+         <section>
+			 <span th:if="${squadra}">
+				 <button style="margin-top: 1%">
+				 <a th:href="'/squadra/'+${squadra.id}">
+					 INDIETRO
+				 </a>
+			 	</button>
+				 <h2>Giocatori del <span th:text="${squadra.nome}">squadra</span>:</h2>
+				 <div id="flex-giocatori">
+					 <div class="giocatori" th:each="giocatore : ${giocatori}">
+						 <a th:href="'/squadra/'+${squadra.id}+'/giocatori/'+${giocatore.id}">
+							 <h3 class="giocatori">
+								<span th:text="*{giocatore.nome}">
+								 Nome
+								</span>
+								 <span th:text="*{giocatore.cognome}">
+								 Cognome
+								</span>
+							 </h3>
+							 <p style="margin-top: -2%">
+								<span th:text="*{giocatore.ruolo}">
+								 ruolo
+								</span>
+							 </p>
+						 </a>
+					 </div>
+				 </div>
+			 </span>
+			 <span th:unless="${squadra}">
+				 <p>La squadra non esiste!</p>
+				 <button>
+					 <a th:href="'/'">
+						 INDIETRO
+					 </a>
+				 </button>
+			 </span>
+
+          </section>
+          
+          <footer>
+			  <p class="footer">Creato da: Andrea Macale (matr. 560793)</p>
+			 </footer>
+          
+      </article>
+	</body>		
+</html>

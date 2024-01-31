@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>
+        Federazione Sport - Admin
+    </title>
+    <link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+<header>
+    <h1 style="margin-left: 40%; margin-top: -0.2%;">ADMIN</h1>
+    <p style="margin-left: 28%">
+        <button>
+            <a href="/logout">LOGOUT</a>
+        </button>
+    </p>
+</header>
+
+<article>
+    <section>
+        <form th:action="@{/admin/presidente}" method="post">
+            <p><sup>*</sup>: Campo obbligatorio</p>
+            <p>
+                <label>Nome<sup>*</sup></label><br>
+                <input type="text" th:field="${utente.nome}" />
+            </p>
+            <p>
+                <label>Cognome<sup>*</sup></label><br>
+                 <input type="text" th:field="${utente.cognome}" />
+            </p>
+            <p>
+                <label>Codice Fiscale<sup>*</sup></label><br>
+                 <input type="text" th:field="${presidente.codiceFiscale}" />
+            </p>
+            <p>
+                <label>Data di nascita<sup>*</sup></label><br>
+                <input type="date" th:field="${utente.dataNascita}" />
+            </p>
+            <p>
+                <label>Luogo di nascita<sup>*</sup></label><br>
+                <input type="text" th:field="${presidente.luogoNascita}" />
+            </p>
+            <p>
+                <label>Email<sup>*</sup></label><br>
+                <input type="text" th:field="${credenziali.username}" />
+            </p>
+            <p>
+                <label>Password<sup>*</sup></label><br>
+                <input type="password" th:field="${credenziali.password}" />
+            </p>
+            <p>
+                <button>
+                    <a href="/">INDIETRO</a>
+                </button>
+                <button type="submit">INSERISCI</button>
+            </p>
+            <div th:object="${utente}">
+                <ul th:if="${#fields.hasGlobalErrors()}">
+                    <p style="color: red">Errori utente:</p>
+                    <li th:each="err : ${#fields.globalErrors()}" th:text="${err}">
+                        ...
+                    </li>
+                </ul>
+            </div>
+            <div th:object="${credenziali}">
+                <ul th:if="${#fields.hasGlobalErrors()}">
+                    <p style="color: red">Errori credenziali:</p>
+                    <li th:each="err : ${#fields.globalErrors()}" th:text="${err}">
+                        ...
+                    </li>
+                </ul>
+            </div>
+            <div th:object="${presidente}">
+                <ul th:if="${#fields.hasGlobalErrors()}">
+                    <p style="color: red">Errori presidente:</p>
+                    <li th:each="err : ${#fields.globalErrors()}" th:text="${err}">
+                        ...
+                    </li>
+                </ul>
+            </div>
+        </form>
+
+    </section>
+
+    <footer>
+        <p class="footer">Creato da: Andrea Macale (matr. 560793)</p>
+    </footer>
+
+</article>
+</body>
+</html>

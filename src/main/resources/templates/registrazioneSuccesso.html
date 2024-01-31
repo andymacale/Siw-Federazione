@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Federazione Sport - Registrazionea</title>
+	<link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+	<header>
+		<h1 style="margin-left: 29%; margin-top: -0.2%;">REGISTRAZIONE</h1>
+	</header>
+	<article>
+		<section>
+			<h2>Congratulazioni ti sei registrato!</h2>
+			<div>
+				<p>
+					<span><b>Nome</b>: </span>
+					<span th:text="${utente.nome}"></span>
+				</p>
+			</div>
+			<div>
+				<p>
+					<span><b>Cognome</b>: </span>
+					<span th:text="${utente.cognome}"></span>
+				</p>
+			</div>
+			<div>
+				<p>
+					<span><b>Email</b>: </span>
+					<span th:text="${utente.email}"></span>
+				</p>
+			</div>
+			<p><button><a href="/formLogin">VAI AL LOGIN</a></button></p>
+		</section>
+		<footer>
+			<p class="footer">Creato da: Andrea Macale (matr. 560793)</p>
+		</footer>
+	</article>
+</body>
+</html>

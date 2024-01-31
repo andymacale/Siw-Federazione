@@ -1,0 +1,190 @@
+section {
+    min-height: 600px;
+    position: static;
+    vertical-align: center;
+}
+
+header {
+    background-color: goldenrod;
+    height: 102px;
+    width: 100%;
+    border: 0px solid black;
+    display: flex;
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    background-color: goldenrod;
+    align-items: center;
+}
+
+body {
+    font-family: Arial, serif;
+    background-color: green;
+}
+
+li {
+    font-size: 34px;
+    color: white;
+}
+
+p {
+    font-size: 34px;
+    color: white;
+}
+
+p.footer {
+    color: black;
+    margin-left: 26.5%;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+img.testoImmagine {
+    width: 100%;
+    height: 100%;
+}
+
+h1.testoImmagine {
+    color: white;
+    font-size: 90px;
+    font-family: Calibri, serif;
+    text-align: center;
+    margin-top: -45%;
+}
+
+#flex-sport {
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+    height: 400px;
+}
+
+div.sport {
+    border: 2px solid white;
+    height: 400px;
+    width: 40%;
+}
+
+img.sport {
+    height: 100%;
+    width: 100%;
+}
+
+button {
+    border: 0px solid black;
+    background-color: white;
+    border-radius: 12px;
+    font-size: 34px;
+    font-family: Arial, serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+div {
+    border: 0px solid white;
+}
+
+input, select {
+    height: 36px;
+    width: 350px;
+    font-size: 24px;
+    font-family: Arial, serif;
+    background-color: white;
+    color: green;
+    border-radius: 12px;
+}
+
+h2 {
+    color: white;
+    font-size: 40px;
+    font-family: Arial, serif;
+}
+
+fieldset {
+    border: 0.5px solid white;
+    background-color: rgba(0, 77, 0, 0.3);
+}
+
+#flex-squadre {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+}
+
+div.squadre {
+    border: 2px solid white;
+    height: 150px;
+    width: 100%;
+    margin-bottom: 0.3%;
+}
+
+h3.squadre {
+    color: yellow;
+    font-size: 38px;
+    font-family: Arial, serif;
+    margin-top: -0.2%;
+    margin-left: 3%;
+}
+
+#flex-giocatori {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+}
+
+div.giocatori {
+    border: 2px solid white;
+    height: 100px;
+    width: 100%;
+    margin-top: -0.2%;
+}
+
+h3.giocatori {
+    color: yellow;
+    font-size: 38px;
+    font-family: Arial, serif;
+    margin-top: -0.2%;
+}
+
+#flex-azioni {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+}
+
+div.azioni {
+    border: 2px solid white;
+    height: 100px;
+    width: 100%;
+    margin-top: 1%;
+}
+
+img.azioniGiocatore {
+    width: 75%;
+    height: 75%;
+}
+
+img.azioniSquadra {
+    width: 100%;
+    height: 100%;
+}
+
+img.azioniPresidente {
+    width: 68%;
+    height: 68%;
+}
+
+table.azioni {
+    border: 0px solid white;
+}

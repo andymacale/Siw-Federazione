@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>
+        Federazione Sport - Admin
+    </title>
+    <link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+<header>
+    <h1 style="margin-left: 40%; margin-top: -0.2%;">ADMIN</h1>
+    <p style="margin-left: 28%">
+        <button>
+            <a href="/logout">LOGOUT</a>
+        </button>
+    </p>
+</header>
+
+<article>
+    <section>
+        <form th:action="@{'/admin/modificaSquadra/'+${squadra.id}}" method="post">
+            <p>
+                <label>Nome</label><br>
+                <input type="text" name="nome" />
+            </p>
+            <p>
+                <label>Anno di fondazione</label><br>
+                <input type="text" name="annoFondazione" />
+            </p>
+            <p>
+                <label>Sede</label><br>
+                <input type="text" name="sede" />
+            </p>
+            <p>
+                <button>
+                    <a href="/admin/selezionaSquadra">INDIETRO</a>
+                </button>
+                <button type="submit">MODIFICA</button>
+            </p>
+        </form>
+    </section>
+
+    <footer>
+        <p class="footer">Creato da: Andrea Macale (matr. 560793)</p>
+    </footer>
+
+</article>
+</body>
+</html>

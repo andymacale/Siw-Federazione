@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>
+        Federazione Sport - Admin
+    </title>
+    <link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+<header>
+    <h1 style="margin-left: 40%; margin-top: -0.2%;">ADMIN</h1>
+    <p style="margin-left: 28%">
+        <button>
+            <a href="/logout">LOGOUT</a>
+        </button>
+    </p>
+</header>
+
+<article>
+    <section>
+        <form th:action="@{'/admin/squadra'}" method="post">
+            <p><sup>*</sup>: Campo obbligatorio</p>
+            <p>
+                <label>Nome<sup>*</sup></label><br>
+                <input type="text" name="nome" />
+            </p>
+            <p>
+                <label>Anno di fondazione<sup>*</sup></label><br>
+                <input type="text" name="annoFondazione" />
+            </p>
+            <p>
+                <label>Sede<sup>*</sup></label><br>
+                <input type="text" name="sede" />
+            </p>
+            <p>
+                <button>
+                    <a href="/">INDIETRO</a>
+                </button>
+                <button type="submit">INSERISCI</button>
+            </p>
+            <div th:object="${squadra}">
+                <ul th:if="${#fields.hasGlobalErrors()}">
+                    <p style="color: red">Errori squadra:</p>
+                    <li th:each="err : ${#fields.globalErrors()}" th:text="${err}">
+                        ...
+                    </li>
+                </ul>
+            </div>
+        </form>
+
+    </section>
+
+    <footer>
+        <p class="footer">Creato da: Andrea Macale (matr. 560793)</p>
+    </footer>
+
+</article>
+</body>
+</html>
