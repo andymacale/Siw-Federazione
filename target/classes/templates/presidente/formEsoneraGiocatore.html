@@ -35,7 +35,7 @@
                              <span th:text="*{giocatore.cognome}">
                                 Cognome
                             </span>
-                             <span th:text="*{giocatore.dataNascita}">
+                             <span th:text="*{#temporals.format(giocatore.dataNascita, 'dd-MM-yyyy')}">
                                 Data
                             </span>
                             <span th:text="*{giocatore.luogoNascita}">

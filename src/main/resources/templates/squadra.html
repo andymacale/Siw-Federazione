@@ -31,7 +31,7 @@
 				 <span th:if="${squadra.presidente}">
 					 <p><b>Nome</b>:  <span th:text="${squadra.presidente.utente.nome}"> </span></p>
 					 <p><b>Cognome</b>:  <span th:text="${squadra.presidente.utente.cognome}"> </span></p>
-					 <p><b>Data di nascita</b>:  <span th:text="${squadra.presidente.utente.dataNascita}"> </span></p>
+					 <p><b>Data di nascita</b>:  <span th:text="${#temporals.format(squadra.presidente.utente.dataNascita, 'dd-MM-yyyy')}"> </span></p>
 					 <p><b>Luogo di nascita</b>:  <span th:text="${squadra.presidente.luogoNascita}"> </span></p>
 				 </span>
 				 <span th:unless="${squadra.presidente}">

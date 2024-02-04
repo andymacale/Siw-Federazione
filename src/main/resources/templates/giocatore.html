@@ -27,7 +27,7 @@
 					 <h2>Giocatore:</h2>
 					 <p><b>Nome</b>: <span th:text="${giocatore.nome}"> </span></p>
 					 <p><b>Cognome</b>: <span th:text="${giocatore.cognome}"> </span></p>
-					 <p><b>Data di nascita</b>: <span th:text="${giocatore.dataNascita}"> </span></p>
+					 <p><b>Data di nascita</b>: <span th:text="${#temporals.format(giocatore.dataNascita, 'dd-MM-yyyy')}"> </span></p>
 					 <p><b>Luogo di nascita</b>: <span th:text="${giocatore.luogoNascita}"> </span></p>
 					 <p><b>Ruolo</b>: <span th:text="${giocatore.ruolo}"> </span></p>
 				 </span>
